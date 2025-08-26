@@ -10,9 +10,9 @@ class ParentAdmin(admin.ModelAdmin):
 
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'student_id', 'gender', 'date_of_birth',
-                    'student_class', 'joining_date', 'mobile_number', 'email')
-    search_fields = ('first_name', 'last_name', 'student_id', 'student_class')
+    list_display = ('matricule', 'first_name', 'last_name', 'student_id', 'gender', 'date_of_birth',
+                    'student_class', 'joining_date', 'mobile_number', 'email', 'fillier', 'nationalite')
+    search_fields = ('matricule', 'first_name', 'last_name', 'student_id', 'student_class')
     list_filter = ('gender', 'student_class', 'fillier')
     readonly_fields = ('student_image',)  # Optional: makes the image field read-only
 

@@ -10,17 +10,18 @@ class Parent(models.Model):
     father_mobile = models.CharField(max_length=20)
     father_email = models.EmailField(max_length=150)
     mother_name = models.CharField(max_length=100)
+    mother_occupation = models.CharField(max_length=100)
     mother_mobile = models.CharField(max_length=20)
     mother_email = models.EmailField(max_length=150)
     present_address = models.TextField(max_length=100)
     permanent_address = models.TextField(max_length=100)
-
 
     def __str__(self):
         return f"{self.father_name} & {self.mother_name}"
     
 
 class Student(models.Model):
+    matricule = models.CharField(max_length=100)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     student_id = models.CharField(max_length=100)
@@ -31,6 +32,7 @@ class Student(models.Model):
     email = models.EmailField(max_length=150)
     mobile_number = models.CharField(max_length=20)
     fillier = models.CharField(max_length=100)
+    nationalite = models.CharField(max_length=100)
     student_image = models.ImageField(upload_to='student_images/', null=True, blank=True)
     parent = models.OneToOneField(Parent, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100, unique=True, blank=True)
